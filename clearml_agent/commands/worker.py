@@ -723,6 +723,7 @@ class Worker(ServiceCommandSection):
         """
         Set task status to appropriate value on user abort.
         """
+        print ("Enter handle_user_abort")
         session = session or self._session
         try:
             task_status = session.send_api(
@@ -1770,7 +1771,7 @@ class Worker(ServiceCommandSection):
                     if daemon:
                         self.send_logs(
                             task_id=task_id,
-                            lines=["User aborted: stopping task ({})\n".format(str(stop_reason))],
+                            lines=["User aborted: stopping task:  ({})\n".format(str(stop_reason))],
                             level="ERROR",
                             session=session,
                         )
