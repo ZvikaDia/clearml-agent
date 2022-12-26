@@ -1762,6 +1762,13 @@ class Worker(ServiceCommandSection):
                 **kwargs
             )
 
+            self.send_logs(
+                task_id=task_id,
+                lines=["Zvika Test debugging output "],
+                level="INFO",
+                session=session,
+            )
+
             while status is None and not stopping:
 
                 stop_reason = stop_signal.test() if stop_signal else TaskStopSignal.default
