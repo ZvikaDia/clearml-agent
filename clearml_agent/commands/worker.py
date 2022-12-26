@@ -1771,7 +1771,7 @@ class Worker(ServiceCommandSection):
                     if daemon:
                         self.send_logs(
                             task_id=task_id,
-                            lines=["User aborted: stopping task:  ({})\n".format(str(stop_reason))],
+                            lines=["User aborted: stopping task: ({})\n".format(str(stop_reason))],
                             level="ERROR",
                             session=session,
                         )
